@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everson Zoio</title>
+</head>
+
+<body>
+    <h1>Calcula sapoha ae</h1>
+    <button onclick="garai()">Calcular</button>
+    <script>
+        function garai() {
+            // let audio = new Audio('nagatoroop.wav');
+            // audio.play();
+            let q = parseInt(prompt("Quando é 2+2?"));
+
+            if (q == "4") {
+                alert("acertou");
+                const audio = new Audio('nagatoroop.wav');
+                audio.play();
+            }else {
+                const audio = new Audio('audio.mp3');
+                audio.play();
+                for (let i = 0; i <= 100; i++) {
+                    document.write("<h2>errou</h2>");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
