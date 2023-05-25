@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="">"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"</script>
+    <script>
+        const screenWidth = window.screen.width;
+        const screenHeight = window.screen.height;
+        document.write(`<h1>Resolution: ${screenWidth}px X ${screenHeight}px</h1>`);
+
+        $.getJSON("https://api.ipify.org?format=json", function (data) {
+            $("#gfg").html(data.ip);
+        });
+    </script>
+</head>
+
+<body>
+
+    <h1 id="gfd">IP address: </h1>
+</body>
+
+</html>

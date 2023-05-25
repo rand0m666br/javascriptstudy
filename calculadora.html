@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <button onclick="botao()">Reload</button><br>
+    <script>
+        let num1 = parseFloat(prompt("Digite um valor"));
+        let num2 = parseFloat(prompt("Digite um outro valor"));
+        let op = prompt("Digite uma operação");
+
+        switch (op) {
+            case "+":
+                document.write("O resultado é: ", "<b>", num1 + num2, "</b>");
+                break;
+            case "-":
+                document.write("O resultado é: ", "<b>", num1 - num2, "</b>");
+                break;
+            case "*":
+                document.write("O resultado é: ", "<b>", num1 * num2, "</b>");
+                break;
+            case "/":
+                if (num2 <= 0) {
+                    document.write("Não existe divisão por 0.")
+                } else {
+                    document.write("O resultado é: ", "<b>", num1 / num2, "</b>", "<br>O resto é: ", "<b>", num1 % num2, "</b>");
+                }
+                break;
+            case "**":
+                document.write(`O resultado é: <b>${num1 ** num2}</b>`);
+                break;
+            default:
+                document.write("Operação inválida");
+                break;
+        }
+
+        function botao(){
+            window.location.reload();
+        }
+    </script>
+</body>
+
+</html>

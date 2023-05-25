@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+</head>
+
+<body>
+    <h1>Escolha uma opção</h1>
+
+    <script>
+        let nome = prompt("Digite seu nome:");
+        let op = prompt("Que dia é hoje?\n1-Domingo\n2-Segunda\n3-Terça\n4-Quarta\n5-Quinta\n6-Sexta\n7-Sábado");
+
+        switch (op) {
+            case "1":
+                document.write(nome + "<br>");
+                document.write("Hoje é domingo.");
+                break;
+            case "2":
+                document.write(nome + "<br>");
+                document.write("Hoje é segunda.");
+                break;
+            case "3":
+                document.write(nome + "<br>");
+                document.write("Hoje é terça.");
+                break;
+            case "4":
+                document.write(nome + "<br>");
+                document.write("Hoje é quarta.");
+                break;
+            case "5":
+                document.write(nome + "<br>");
+                document.write("Hoje é quinta.");
+                break;
+            case "6":
+                document.write(nome + "<br>");
+                document.write("Hoje é sexta.");
+                break;
+            case "7":
+                document.write(nome + "<br>");
+                document.write("Hoje é sábado.");
+                break;
+            default:
+                document.write("VÁ PRA PUTA QUE O PARIU");
+                break;
+        }
+    </script>
+</body>
+
+</html>

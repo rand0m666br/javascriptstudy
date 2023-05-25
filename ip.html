@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get my IP</title>
+</head>
+
+<body>
+    <script>
+        const screenWidth = window.screen.width;
+        const screenHeight = window.screen.height;
+
+        function getIPAddress(callback) {
+            // Make a request to an IP lookup API
+            fetch("https://api.ipify.org?format=json")
+                .then(response => response.json())
+                .then(data => {
+                    // Extract the IP address from the response
+                    const ipAddress = data.ip;
+
+                    // Invoke the callback function with the IP address
+                    callback(ipAddress);
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    // Invoke the callback function with a default value or an error message
+                    callback(null);
+                });
+        }
+        // Example usage
+        getIPAddress(ip => {
+            if (ip) {
+                document.write(`<h1>IP: ${ip}<br>Resolution: ${screenWidth}px X ${screenHeight}px</h1>`);
+            } else {
+                document.write("Failed to retrieve IP address");
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

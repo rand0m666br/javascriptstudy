@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+<body>
+    <h1>Cálculo de notas</h1>
+    <hr>
+    <script>
+        let n1 = prompt("Digite a primeira nota");
+        let n2 = prompt("Digite a segunda nota");
+
+        media = (Number(n1) + Number(n2))/2;
+
+        if (media >= 7) {
+            document.write("<h2>Aprovado, parabéns.<br>Sua média é: "+media+"</h2>");
+        }else {
+            document.write("<h2>Reprovou, filho da puta.<br>Sua média é: "+media+"</h2>");
+        }
+    </script>
+</body>
+</html>

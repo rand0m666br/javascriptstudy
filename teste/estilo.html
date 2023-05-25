@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            color: rgb(61, 61, 61);
+            background-color: rgb(231, 231, 231);
+        }
+
+        h1 {
+            color: rgb(0, 146, 146);
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            font-size: 17px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            margin: 10px;
+        }
+
+        .dark {
+            margin: 0;
+            color: rgb(224, 224, 224);
+            background-color: rgb(15, 15, 15);
+        }
+
+        .dark h1 {
+            color: rgb(146, 0, 0);
+        }
+
+        .dark button {
+            background-color: rgb(146, 0, 0);
+            color: white;
+            box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .red {
+            background-color: red;
+            color: black;
+        }
+
+        .red h1 {
+            color: black;
+        }
+
+        .red button {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Teste</h1>
+    <h2>Teste</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit natus velit tempore? Necessitatibus neque
+        soluta ea corporis. Quae at aliquam esse. Facere voluptatem autem reiciendis labore consectetur libero? Sint,
+        explicabo.</p>
+
+    <button onclick="dark()">Modo escuro</button>
+    <br>
+    <button onclick="red()">Modo vermelho</button>
+
+    <script>
+        function dark() {
+            let element = document.body;
+            element.classList.toggle("dark");
+        }
+
+        function red(){
+            let element = document.body;
+            element.classList.toggle("red");
+        }
+    </script>
+</body>
+
+</html>
