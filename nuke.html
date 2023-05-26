@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuke</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: rgb(158, 158, 158);
+            background-image: url("nagatoro.png");
+        }
+
+        button {
+            margin-top: 20%;
+            padding: 50px;
+            font-size: 30px;
+            background-color: rgb(255, 60, 60);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        button:hover {
+            background-color: rgb(255, 100, 100);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button onmouseover="abre()">Não clique</button>
+    <script>
+        function abre() {
+            const audio = new Audio("audio.mp3");
+            audio.play();
+
+            while (true) {
+                open("https://www.youtube.com/watch?v=uuNqaNCUFu8");
+                open("https://www.youtube.com/watch?v=TZEijhxnXm4");
+                open("https://www.youtube.com/watch?v=LVD1D9ZxLOI");
+                open("https://www.youtube.com/watch?v=b13Pbat-P9I");
+                open("https://www.youtube.com/watch?v=wsMIoRkkHBU");
+                open("https://www.youtube.com/watch?v=2x2quAfcKlE");
+                open("https://www.youtube.com/watch?v=JdhbGJ3mWM8");
+            }
+        }
+    </script>
+</body>
+
+</html>
