@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+
+<body>
+    <h1>Armazenar nome</h1>
+    <div id="form">
+        <label for="">Digite seu nome:</label><br>
+        <input type="text" id="nome">
+        <button onclick="getName()">Armazenar</button>
+
+    </div>
+    <h2 id="msg"></h2>
+
+    <script>
+        function getName() {
+            // captura o nome digitado
+            let nome = document.getElementById("nome").value;
+            localStorage.setItem("saveName", nome);
+            showMsg();
+
+            // esconde a div form
+            hideform();
+        }
+        function showMsg() {
+            let saveName = localStorage.getItem("saveName");
+            var msg = document.getElementById("msg");
+            msg.innerHTML = "Bem vindo(a), " + saveName + ".";
+        }
+        function hideform(){
+            let form = document.getElementById("form");
+            form.style.display = "none";
+        }
+        window.onload = function (){
+            let saveName = localStorage.getItem("saveName");
+            if (saveName) {
+                showMsg(saveName);
+                hideform();
+            }
+        }
+        // window.localStorage.setItem("nome", "Rand0m");
+        // document.write(localStorage.nome);
+        // console.log(localStorage.nome)
+    </script>
+</body>
+
+</html>

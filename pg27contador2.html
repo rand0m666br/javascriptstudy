@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador 2</title>
+</head>
+<body>
+    <div class="contador">
+        <button onclick="cont()">Não clique</button>
+        <br>
+        Contagem: <span id="contador"></span>
+    </div>
+
+    <script>
+        function cont(){
+            let elemento = document.querySelector("#contador");
+            let contador = 0;
+            setInterval(()=>elemento.innerHTML = contador++, 1000);
+        }
+    </script>
+</body>
+</html>
