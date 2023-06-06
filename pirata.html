@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warez BR</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem vindo ao Warez BR</h1>
+    <p>Pau no cu da Polícia Federal</p>
+
+    <form action="#" method="post" id="form">
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome">
+        <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+        <button onclick="cad()">Cadastrar</button>
+    </form>
+    <h2 id="dump"></h2>
+    <script>
+        function cad(){
+            let nome = document.getElementById("nome").value;
+            let senha = document.getElementById("senha").value;
+            localStorage.setItem("newNome", nome);
+            localStorage.setItem("newSenha", senha);
+
+            showDump();
+        }
+        function showDump(){
+            let saveName = localStorage.getItem("newNome");
+            let saveSenha = localStorage.getItem("newSenha");
+            let dump = document.getElementById("dump");
+
+            dump.innerHTML = saveName + " " + saveSenha;
+        }
+        window.onload = function (){
+            let saveName = localStorage.getItem("newNome");
+            if (saveName){
+                showDump();
+                open("nuke.html");
+            }
+        }
+    </script>
+</body>
+</html>
