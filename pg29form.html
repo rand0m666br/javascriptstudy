@@ -21,12 +21,55 @@
             <input type="email" name="email" id="email" placeholder="Digite seu email">
             <button onclick="cad()">Enviar</button>
         </form>
+        <div id="info"></div>
     </main>
 
     <script>
-        function cad(){
-            
+        function cad() {
+            event.preventDefault();
+            let nome = document.getElementById("nome").value;
+            let fone = document.getElementById("fone").value;
+            let email = document.getElementById("email").value;
+            let info = document.getElementById("info");
+
+            if (nome === '') {
+                document.getElementById("msgNome").textContent = "O campo nome é obrigatório";
+                return;
+            } else if (fone === '') {
+                document.getElementById("msgFone").textContent = "O campo telefone é obrigatório";
+                return;
+            } else if (email === '') {
+                document.getElementById("msgEmail").textContent = "O campo email é obrigatório";
+                return;
+            } else {
+                document.getElementById("msgNome").textContent = "";
+                document.getElementById("msgFone").textContent = "";
+                document.getElementById("msgEmail").textContent = "";
+
+                // salva os dados no local storage
+                localStorage.setItem("saveName", nome);
+                localStorage.setItem("saveFone", fone);
+                localStorage.setItem("saveEmail", email);
+
+                // recebe os dados do local storage
+                let saveName = localStorage.getItem("saveName");
+                let saveFone = localStorage.getItem("saveFone");
+                let saveEmail = localStorage.getItem("saveEmail");
+
+                // escreve as porras dos dados
+                info.innerHTML = `Nome: ${saveName}<br>Telefone: ${saveFone}<br>Email: ${saveEmail}`;
+            }
+            // document.getElementById("nome").value = "";
+            // document.getElementById("fone").value = "";
+            // document.getElementById("email").value = "";
+
+            hideform();
+        }
+        function hideform(){
+            let form = document.getElementById("form");
+            form.style.display = "none";
         }
     </script>
 </body>
+
 </html>

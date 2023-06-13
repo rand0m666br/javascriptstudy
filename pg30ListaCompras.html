@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListaDeCompras</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: rgb(170, 170, 170);
+        }
+        span {
+            font-size: 2.18em;
+            color: azure;
+        }
+        .conteudo {
+            padding: 10vh 3em 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 2em;
+        }
+        .principal {
+            flex-grow: 1;
+            flex-basis: auto;
+            min-width: 37.5em;
+            padding: 4em 2em 2em;
+            box-sizing: border-box;
+            display: flex;
+            background: rgb(95, 95, 95);
+            border-radius: 0.625em;
+            gap: 2em;
+        }
+        .adicionar {
+            width: 100%;
+        }
+        .adicionar input {
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0.5em 0 1em;
+            padding: 1em 0.5em;
+            border-radius: 0.625em;
+            border: 0.125em solid saddlebrown;
+        }
+        .adicionar label {
+            display: block;
+        }
+        .lista {
+            margin: 0;
+            padding: 0;
+        }
+        .item {
+            list-style: none;
+            padding: 0.6em 2em;
+            background: rgb(192, 211, 212);
+            border-radius: 0.625em;
+            margin: 0 0 1em;
+            width: 100%;
+            box-sizing: border-box;
+            display: inline-flex;
+            align-items: center;
+            gap: 1em;
+            font-size: 1.25em;
+        }
+        .item strong {
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5em;
+            height: 2.5em;
+            background: skyblue;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="conteudo">
+        <div class="principal">
+            <form action="" class="adicionar" id="novoItem">
+                <span>Lista de Compras</span>
+                <label for="produto">Produto</label>
+                <input type="text" name="produto" id="produto">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" name="quantidade" id="quantidade">
+                <input type="submit" value="Adicionar" class="cadastrar" id="cadastrar">
+            </form>
+        </div>
+        <ul class="lista" id="lista"></ul>
+    </main>
+    <script src="script/lista.js"></script>
+</body>
+
+</html>

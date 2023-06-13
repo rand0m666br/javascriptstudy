@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressões regulares</title>
+</head>
+<body>
+    <form>
+        <label>Telefone:</label><br>
+        <input type="text" id="fone" oninput="formataFone()">
+    </form>
+
+    <script>
+        // setInterval(formataFone, 100);
+        function formataFone(){
+            let inputFone = document.getElementById("fone");
+            let valor = inputFone.value;
+
+            valor = valor.replace(/\D/g, ''); // vai remover todos caracteres que não são numericos
+            // adiciona os () e - ao telefone
+            valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
+            valor = valor.replace(/(\d)(\d{4})$/, '$1-$2'); 
+
+            // atualiza o campo telefone
+            inputFone.value = valor;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Peso</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Gravidade relativa</th>
+                <th>Planete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>0,37</td>
+                <td>Mercúrio</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>0,88</td>
+                <td>Vênus</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>0,38</td>
+                <td>Marte</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>2,64</td>
+                <td>Júpiter</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>1,15</td>
+                <td>Saturno</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>1,17</td>
+                <td>Urano</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="text" name="peso" id="peso" placeholder="Peso da pessoa na Terra">
+    <input type="text" name="plan" id="plan" placeholder="Planeta">
+    <button onclick="cal()">Calcular</button>
+    <h2 id="res"></h2>
+    <a href="ex4.html"><button>Recarregar</button></a>
+
+    <script>
+        function cal(){
+            let peso = parseFloat(document.getElementById("peso").value);
+            let plan = document.getElementById("plan").value;
+            let res = document.getElementById("res");
+            
+            // if (plan == "Mercúrio"){
+            //     res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*0.37);
+            // }else if(plan == "Vênus"){
+            //     res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*0.88);
+            // }else if(plan == "Marte"){
+            //     res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*0.38);
+            // }else if(plan == "Júpiter"){
+            //     res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*2.64);
+            // }else if(plan == "Saturno"){
+            //     res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*1.15);
+            // }else if(plan == "Urano"){
+            //     res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*1.17);
+            // }
+            switch (plan) {
+                case 'Mercúrio':
+                res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*0.37);
+                    break;
+                case 'Vênus':
+                res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*0.88);
+                    break;
+                case 'Marte':
+                res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*0.38);
+                    break;
+                case 'Júpiter':
+                res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*2.64);
+                    break;
+                case 'Saturno':
+                res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*1.15);
+                    break;
+                case 'Urano':
+                res.innerHTML = "O peso desta pessoa em " + plan + " é: " + ((peso/10)*1.17);
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

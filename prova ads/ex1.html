@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mêses</title>
+</head>
+
+<body>
+    <label>Digite um número de 1 a 12:</label><br>
+    <input type="text" name="num" id="num"><br>
+    <button onclick="mes()">Ação</button>
+    <a href="ex1.html"><button>Recarregar</button></a>
+    <button onclick="sai()">Sair</button>
+    <h2 id="res"></h2>
+
+    <script>
+        function mes() {
+            let num = parseInt(document.getElementById("num").value);
+            let res = document.getElementById("res");
+
+            switch (num) {
+                case 1:
+                    res.innerHTML = "Janeiro";
+                    break;
+                case 2:
+                    res.innerHTML = "Fevereiro";
+                    break;
+                case 3:
+                    res.innerHTML = "Março";
+                    break;
+                case 4:
+                    res.innerHTML = "Abril";
+                    break;
+                case 5:
+                    res.innerHTML = "Maio";
+                    break;
+                case 6:
+                    res.innerHTML = "Junho";
+                    break;
+                case 7:
+                    res.innerHTML = "Julho";
+                    break;
+                case 8:
+                    res.innerHTML = "Agosto";
+                    break;
+                case 9:
+                    res.innerHTML = "Setembro";
+                    break;
+                case 10:
+                    res.innerHTML = "Outubro";
+                    break;
+                case 11:
+                    res.innerHTML = "Novembro";
+                    break;
+                case 12:
+                    res.innerHTML = "Dezembro";
+                    break;
+                default:
+                    res.innerHTML = "Número inválido";
+                    break;
+            }
+        }
+        function sai(){
+            close();
+        }
+    </script>
+</body>
+
+</html>
