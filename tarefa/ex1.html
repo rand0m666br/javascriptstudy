@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 1</title>
 
     <style>
-        label,button {
+        label,
+        button {
             display: block;
         }
     </style>
 </head>
+
 <body>
     <form method="post" id="form">
         <label>Nome:</label>
@@ -22,12 +25,73 @@
         <label>Telefone:</label>
         <input type="number" name="fone" id="fone">
         <button onclick="envia()">Enviar</button>
+        <button onclick="limpa()">Limpar</button>
     </form>
+    <h2 id="msg"></h2>
 
     <script>
-        function envia(){
-            
+        function envia() {
+            event.preventDefault();
+
+            let nome = document.getElementById("nome").value;
+            let sobr = document.getElementById("sobr").value;
+            // Poderia ter adicionado uma função para verificar o CPF, mas fiquei com preguiça
+            let cpf = document.getElementById("cpf").value;
+            let fone = document.getElementById("fone").value;
+            let msg = document.getElementById("msg");
+
+            localStorage.setItem("saveNome", nome);
+            localStorage.setItem("saveSobr", sobr);
+            localStorage.setItem("saveCpf", cpf);
+            localStorage.setItem("saveFone", fone);
+            show();
         }
+        // Poderia ter feito o formulário desaparecer e dar lugar à mensagem, mas fiquei com preguiça
+        function show() {
+            let saveNome = localStorage.getItem("saveNome");
+            let saveSobr = localStorage.getItem("saveSobr");
+            let saveCpf = localStorage.getItem("saveCpf");
+            let saveFone = localStorage.getItem("saveFone");
+
+            // Está ruim, a variável que for limpa vai mostar "null"
+            msg.innerHTML = saveNome + " " + saveSobr + " " + saveCpf + " " + saveCpf + " " + saveFone;
+        }
+        window.onload = function () {
+            let saveNome = localStorage.getItem("saveNome");
+            let saveSobr = localStorage.getItem("saveSobr");
+            let saveCpf = localStorage.getItem("saveCpf");
+            let saveFone = localStorage.getItem("saveFone");
+
+            if (saveNome || saveSobr || saveCpf || saveFone) {
+                show();
+            }
+        }
+        function limpa() {
+            let valor = prompt("Quais valores deseja limpar?\n1- Nome\n2- Sobrenome\n3- CPF\n4- Telefone\n0- Tudo");
+            switch (valor) {
+                case "1":
+                    localStorage.removeItem("saveNome");
+                    break;
+                case "2":
+                    localStorage.removeItem("saveSobr");
+                    break;
+                case "3":
+                    localStorage.removeItem("saveCpf");
+                    break;
+                case "4":
+                    localStorage.removeItem("saveFone");
+                    break;
+                case "0":
+                    localStorage.clear();
+                    break;
+                default:
+                    alert("inválido");
+                    break;
+            }
+        }
+        // O código está ruim, mas eu precisava terminar isso a qualquer custo
+        // Poderia ter adicionado um CSS e deixado tudo mais bonito, mas eu só queria terminar isso logo
     </script>
 </body>
+
 </html>
