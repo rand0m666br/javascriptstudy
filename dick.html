@@ -8,6 +8,7 @@
     <style>
         div {
             margin: auto;
+            cursor: pointer;
         }
         #head {
             width: 200px;
@@ -15,9 +16,6 @@
             background-color: rgb(255, 131, 168);
             border-top-left-radius: 100px;
             border-top-right-radius: 100px;
-        }
-        #head:hover {
-            cursor: pointer;
         }
         #body {
             width: 200px;
@@ -33,9 +31,9 @@
     </style>
 </head>
 <body>
-    <div id="head" onmouseover="aumenta()"></div>
-    <div id="body"></div>
-    <div id="bottom"></div>
+    <div id="head" onmousemove="aumenta()"></div>
+    <div id="body" onmousemove="aumenta()"></div>
+    <div id="bottom" onmousemove="aumenta()"></div>
 
     <script>
         // aumentar tamanho da pica
@@ -44,7 +42,7 @@
             let altura = corpo.offsetHeight;
             let novaAltura = altura + 1;
             corpo.style.height = novaAltura + 'px';
-            setInterval(aumenta, 100);
+            // setInterval(aumenta, 100);
         }
     </script>
 </body>
